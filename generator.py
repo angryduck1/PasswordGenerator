@@ -1,3 +1,4 @@
+from order_generator import *
 from random import *
 import os
 
@@ -10,14 +11,6 @@ values = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
     "X", "C", "V", "B", "N", "M"]
      
 keep_again = "y"
-orders = []
-
-def order_of_digitals():
-  global count
-  global orders
-  while count >= 0:
-    orders.append(count)
-    count -= 1
 
 while keep_again != "n":
   shuffle(values)
@@ -36,7 +29,7 @@ while keep_again != "n":
     list.append(choice(values))
     count_2 += 1
 
-  order_of_digitals()
+  order_of_digitals(count)
 
   print(orders)
   list[choice(orders)] = choice(["_", "@", "$", "#"]) 
